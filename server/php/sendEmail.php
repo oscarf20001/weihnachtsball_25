@@ -10,7 +10,7 @@ header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type, Authorization');
 
 require 'db_connection.php';
-require __DIR__ . '/../../vendor/autoload.php'; // Autoloader einbinden
+//require __DIR__ . '/../../vendor/autoload.php'; // Autoloader einbinden
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -44,6 +44,8 @@ function getIdForMail($conn, $vorname, $nachname, $email){
         $getIdStmt->close();
         return null;
     }
+
+    $kaeuferId = null;
 
     $getIdStmt->bind_result($kaeuferId);
     if ($getIdStmt->fetch()) {
@@ -162,7 +164,7 @@ try {
 <html>
 <head>
     <meta charset='UTF-8'>
-    <title>Ticketreservierung Herbstball 2025 MCG-FFR</title>
+    <title>Ticketreservierung Weihnachtsball 2025 MCG</title>
     <style>
         body {
             margin: 0;
@@ -226,20 +228,20 @@ try {
     <div class='container'>
         <h1>Hey " . $empfaengerPerson->vorname . ",</h1>
         <p>
-            Du hast es geschafft und dir deine grandiosen Tickets für den Herbstball 2025 gesichert – vielen Dank dafür! 🎉
+            Du hast es geschafft und dir deine grandiosen Tickets für den Weihnachtsball 2025 gesichert – vielen Dank dafür! 🎉
         </p>
         <p>
             <strong>Hier sind alle wichtigen Infos:</strong><br><br>
-            📅 Datum: 17.10.2025<br>
+            📅 Datum: 19.12.2025<br>
             🕓 Uhrzeit: Einlass ab 18:45 Uhr, Beginn um 20:00 Uhr, Ende: 01:00 Uhr<br>
             📍 Adresse: Friedrich-Wolf-Straße 31, Oranienburg
         </p>
         <p>
             Ab wann, wo und wie Bar gezahlt werden kann, teilen wir euch noch rechtzeitig mit!
         </p>
-        <p style='color:#c0392b;'>
-            <strong>Wichtig:</strong> Unbezahlte Tickets werden am <strong>10.10.2025 um 23:59 Uhr</strong> automatisch storniert!
-        </p>
+        <!--<p style='color:#c0392b;'>
+            <strong>Wichtig:</strong> Unbezahlte Tickets werden am <strong>12.12.2025 um 23:59 Uhr</strong> automatisch storniert!
+        </p>-->
 
         <h2>🧾 Deine Reservierung:</h2>
         <table>
@@ -271,16 +273,16 @@ $nachricht .= "
             </tbody>
         </table>
 
-        <p>
+        <!--<p>
             <a href='https://curiegymnasium.de/server/mail/bestaetigen.php?id=" . $empfaengerPerson->id . "&token=" . $code . "' class='cta-button'>
                 ✅ Tickets bestätigen
             </a>
-        </p>
+        </p>-->
 
         <div class='qr-section'>
             <p><strong>Wenn du schon bezahlen möchtest:</strong><br>
             Scanne den folgenden PayPal-QR-Code und überweise die oben genannte Gesamtsumme mit dem folgenden Verwendungszweck:<br><br>
-            <strong>" . str_replace("@", "at", $empfaengerPerson->email) . " Herbstball</strong>
+            <strong style='font-size: 12px;'>'" . str_replace("@", "at", $empfaengerPerson->email) . " Weihnachtsball'</strong>
             </p><br>
             <img src='cid:paypal_qr' alt='QR zur Bezahlung' style='max-width: 100%; height: auto; border-radius: 6px;'>
         </div>
@@ -318,7 +320,7 @@ $nachricht .= "
     // Nachricht
     $mail->AddEmbeddedImage('../mail/images/paypal.jpeg', 'paypal_qr');
     $mail->isHTML(true);
-    $mail->Subject = 'Fancytastische Buchungsbestätigung: Herbstball 2025';
+    $mail->Subject = 'Fancytastische Buchungsbestätigung: Weihnachtsball 2025';
     $mail->Body    = $nachricht;
 
     $mail->send();
@@ -363,13 +365,26 @@ function sentCodeToKaeufer(mysqli $conn, EmpfaengerPerson $empfaengerPerson, int
     ];
 }
 
-function generateCodeFromId(EmpfaengerPerson $empfaengerPerson): string {
-    $hash = hash('sha256', 'secret_salt' . microtime() . random_int(0,12345678));
-    $decimal = gmp_strval(gmp_init(substr($hash, 0, 15), 16), 10);
-    $shortCode = (int) substr($decimal, 0, 10);
-
-    //Optional: Debug global ausgeben (wenn du willst)
+function generateCodeFromId(EmpfaengerPerson $empfaengerPerson): int {
     global $results;
+
+    // Hash erzeugen
+    $hash = hash('sha256', 'secret_salt' . microtime() . random_int(0,12345678));
+
+    // Hexadezimal zu Dezimal konvertieren mit BC-Math
+    $hexPart = substr($hash, 0, 15); // die ersten 15 Zeichen
+    $decimal = '0';
+    $hexLen = strlen($hexPart);
+
+    for ($i = 0; $i < $hexLen; $i++) {
+        $decimal = bcmul($decimal, '16');           // multiply by 16
+        $decimal = bcadd($decimal, hexdec($hexPart[$i])); // add current hex digit
+    }
+
+    // Kurzcode: die ersten 10 Ziffern
+    $shortCode = (int)substr($decimal, 0, 10);
+
+    // Debug global speichern
     $results[] = [
         "ID" => $empfaengerPerson->id,
         "Hash" => $hash,

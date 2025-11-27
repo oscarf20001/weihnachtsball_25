@@ -151,7 +151,7 @@ function initSchoolOptions(ticket) {
     if (!hiddenInput || schoolButtons.length === 0) return;
 
     hiddenInput.value = schoolButtons[0].dataset.school;
-    schoolButtons[2].classList.add('active');
+    schoolButtons[1].classList.add('active');
 
     schoolButtons.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -199,8 +199,8 @@ function addTicketBlock() {
           <label id="schoolLabel-${newIdSuffix}" class="schoolLabel" for="schoolInput-${newIdSuffix}">Schule:<sup>*</sup></label>
           <div id="school-optionGroup-${newIdSuffix}" class="school-optionGroup">
             <button type="button" class="schoolOption selectiveButton buttonNeedsBorder" data-school="MCG">MCG</button>
-            <button type="button" class="schoolOption selectiveButton buttonNeedsBorder" data-school="FFR">FFR</button>
-            <button type="button" class="schoolOption selectiveButton buttonNeedsBorder" data-school="ADR">andere</button>
+            <!--<button type="button" class="schoolOption selectiveButton buttonNeedsBorder" data-school="FFR">FFR</button>-->
+            <button type="button" class="schoolOption selectiveButton buttonNeedsBorder" data-school="EXT">extern</button>
           </div>
           <input type="hidden" name="school-${newIdSuffix}" id="schoolInput-${newIdSuffix}" required>
         </div>

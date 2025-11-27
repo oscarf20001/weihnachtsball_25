@@ -51,15 +51,6 @@ $extractPartUrlPath = 'server/php/html-structure/extract_part-URL.php';
 if (!file_exists($extractPartUrlPath)) {
     die("Fehler: Die Datei extract_part-URL.php wurde nicht gefunden unter: $extractPartUrlPath");
 }
-
-// Datei einbinden
-require_once($extractPartUrlPath);
-
-// Funktion aufrufen
-$outputURLEnding = getOutputURLEnding();
-
-// Globale Variable setzen
-$GLOBALS['outputURLEnding'] = $outputURLEnding;
 ?>
 
 <!DOCTYPE html>
@@ -67,7 +58,7 @@ $GLOBALS['outputURLEnding'] = $outputURLEnding;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Herbstball des MCG 2025 - Powered by Metis</title>
+    <title>Weihnachtsball des MCG 2025 - Powered by Metis</title>
 
     <link rel="stylesheet" href="client/styles/barStyles.css">
     <link rel="stylesheet" href="client/styles/form.css">

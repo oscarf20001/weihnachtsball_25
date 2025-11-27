@@ -8,7 +8,7 @@ const ts_lastMinute = 1759528799; // 17,50€
 const ts_currentTime = Date.now() / 1000;
 //const ts_currentTime = 1785794399; // 2026er Timestamp für Tests
 
-let value = 14;
+let value = 13;
 
 /*if(ts_currentTime > ts_lastMinute){
     value = 18;
