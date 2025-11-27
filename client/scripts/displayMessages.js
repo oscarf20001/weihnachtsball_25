@@ -44,7 +44,7 @@ export function displayMessage(msg, details = null){
             break;
 
         case 'success':
-            displayElementText.textContent = 'Reservierung erfolgreich: Bestätige deine Tickets per E-Mail.';
+            displayElementText.textContent = 'Reservierung erfolgreich!';
             displayContainer.style.backgroundColor = 'var(--successGreen)';
             displayContainer.style.transform = 'translate(-50%, 0%)';
             setTimeout(() => {
