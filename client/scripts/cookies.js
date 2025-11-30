@@ -23,7 +23,6 @@ function initCookies() {
     submitBtn.addEventListener('click', () => {
         setCookie("userConsent", "accepted");
         container.remove();
-        alert("Hallo")
     });
 }
 
