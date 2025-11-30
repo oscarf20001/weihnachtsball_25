@@ -1,12 +1,16 @@
 const ctx = document.getElementById('sharesOfSchool_canvas');
 
 const dataFromBackend = await getSharesOfSchools();
+const countMCG = dataFromBackend[0] ? dataFromBackend[0].anzahl : 0;
+const labelMCG = dataFromBackend[0] ? dataFromBackend[0].school : '';
+const countEXT = dataFromBackend[1] ? dataFromBackend[1].anzahl : 0;
+const labelEXT = dataFromBackend[1] ? dataFromBackend[1].school : '';
 
 const data = {
-    labels: [dataFromBackend[0].school, dataFromBackend[1].school, dataFromBackend[2].school],
+    labels: [labelMCG, labelEXT],
     datasets: [{
         label: 'Schule',
-        data: [dataFromBackend[0].anzahl,dataFromBackend[1].anzahl,dataFromBackend[2].anzahl],
+        data: [countMCG, countEXT],
         backgroundColor: [
             'rgb(54, 99, 235)',
             'rgb(235, 154, 54)',

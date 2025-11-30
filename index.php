@@ -54,7 +54,7 @@ if (!file_exists($extractPartUrlPath)) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,6 +63,7 @@ if (!file_exists($extractPartUrlPath)) {
     <link rel="stylesheet" href="client/styles/barStyles.css">
     <link rel="stylesheet" href="client/styles/form.css">
     <link rel="stylesheet" href="client/styles/inputFields.css">
+    <link rel="stylesheet" href="client/styles/cookieBanner.css">
 
     <!-- Standard-Favicon -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -80,7 +81,8 @@ if (!file_exists($extractPartUrlPath)) {
     <script type="module" src="client/scripts/dataTicket.js" defer></script>
     <script type="module" src="client/scripts/checks.js" defer></script>
     <script type="module" src="client/scripts/denied.js" defer></script>
-    <!--<script src="client/scripts/analytics.js"></script>-->
+    <script src="client/scripts/analytics.js"></script>
+    <script src="client/scripts/cookies.js" defer></script>
     <script type="module" src="client/scripts/displayMessages.js"></script>
     
     <script src="https://kit.fontawesome.com/b9446e8a7d.js" crossorigin="anonymous"></script>

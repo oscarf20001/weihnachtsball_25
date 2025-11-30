@@ -37,7 +37,9 @@ $outputURLEnding = getOutputURLEnding();
     <link rel="stylesheet" href="<?= BASE_URL ?>/client/styles/einzahlungen.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/client/styles/inputFields.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/client/styles/tables.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/client/styles/cookieBanner.css">
 
+    <script type="module" src="<?= BASE_URL ?>/client/scripts/cookies.js" defer></script>
     <script type="module" src="<?= BASE_URL ?>/client/scripts/denied.js" defer></script>
     <script type="module" src="<?= BASE_URL ?>/client/scripts/searchEmails.js" defer></script>
     <script type="module" src="<?= BASE_URL ?>/client/scripts/einzahlung.js" defer></script>

@@ -1,4 +1,13 @@
 (function () {
+  // Script deaktivieren für localhost
+  if (
+    location.hostname === "localhost" ||
+    location.hostname === "127.0.0.1" ||
+    location.hostname.endsWith(".test")
+  ) {
+    return; // ⬅️ verhindert alle weiteren Aktionen
+  }
+
   function getDeviceType() {
     const ua = navigator.userAgent;
     if (/Mobi|Android/i.test(ua)) return 'Mobile';

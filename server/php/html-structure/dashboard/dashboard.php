@@ -1,6 +1,8 @@
 <?php
 require __DIR__ . '/../../db_connection.php';
 require_once __DIR__ . '/../../../../config.php'; // Holt BASE_PATH und BASE_URL aus config.php
+
+$currentCosts = 2500;
 ?>
 
 <div id="dashboardDisplayContainer">
@@ -8,7 +10,7 @@ require_once __DIR__ . '/../../../../config.php'; // Holt BASE_PATH und BASE_URL
         <div class="display-container_upper">
             <h1>
                 <?php
-                    $herbstball_ts = 1760652000;
+                    $herbstball_ts = 1766166300;
                     $current_ts = time();
                     $diff = $herbstball_ts - $current_ts;
                     $dayDiff = $diff / 86400;
@@ -100,10 +102,7 @@ require_once __DIR__ . '/../../../../config.php'; // Holt BASE_PATH und BASE_URL
                     $stmt->execute();
                     $stmt->bind_result($sum);
                     $stmt->fetch();
-                    //echo json_encode(3775.97 - (float) $sum) . '€';
-                    //echo number_format(2951 - (float) $sum, 2, '.', '') . '€';
-                    //echo number_format(3098.12 - (float) $sum, 2, '.', '') . '€';
-                    echo number_format(3291.04 - (float) $sum, 2, '.', '') . '€';
+                    echo number_format($currentCosts - (float) $sum, 2, '.', '') . '€';
                     $stmt->close();
                 ?>
             </h1>

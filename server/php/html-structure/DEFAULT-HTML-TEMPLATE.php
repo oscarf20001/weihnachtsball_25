@@ -34,6 +34,13 @@
     ?>
 </div>
 
+<div id="cookies">
+    <?php
+        //require($basePath . '/server/php/html-structure/logo.php');
+        require __DIR__ . '/cookieBanner.php';
+    ?>
+</div>
+
 <footer id="footer">
     <?php
         //require($_SERVER['DOCUMENT_ROOT'] . '/Metis/herbstball_25/server/php/html-structure/footer.php');

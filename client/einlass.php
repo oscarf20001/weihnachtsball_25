@@ -35,7 +35,9 @@ if (isset($_GET['refresh'])) {
     <link rel="stylesheet" href="<?= BASE_URL ?>/client/styles/dashboard.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/client/styles/user.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/client/styles/einlass.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/client/styles/cookieBanner.css">
     <script src="https://kit.fontawesome.com/b9446e8a7d.js" crossorigin="anonymous"></script>
+    <script type="module" src="<?= BASE_URL ?>/client/scripts/cookies.js" defer></script>
     <script type="module" src="<?= BASE_URL ?>/client/scripts/denied.js" defer></script>
     <script type="module" src="<?= BASE_URL ?>/client/scripts/einlass.js" defer></script>
 </head>
