@@ -87,3 +87,21 @@
     background-color: var(--secondaryColor);
     color: var(--primaryColor);
 }
+
+@media screen and (max-width: 768px) {
+    #cookies{
+        width: calc(100% - 2rem);
+        position: absolute;
+        margin: 0;
+        aspect-ratio: 0;
+        height: fit-content;
+    }
+
+    #cookies h2{
+        font-size: 19px;
+    }
+
+    #cookies div{
+        font-size: 14px;
+    }
+}
