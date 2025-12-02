@@ -1,14 +1,14 @@
 const ctx = document.getElementById('webStatisticsUserDevices_canvas');
 
 const backEndData = await countDesktopAccesses()
-const desktopCount = backEndData[0] ?  backEndData[0].anzahl : 0;
-const mobileCount = backEndData[1] ?  backEndData[1].anzahl : 0;
+const mobileCount = backEndData[0] ?  backEndData[0].anzahl : 0;
+const desktopCount = backEndData[1] ?  backEndData[1].anzahl : 0;
 
 const data = {
-    labels: ['Desktop', 'Mobile'],
+    labels: ['Mobile', 'Desktop'],
     datasets: [{
         label: 'Device',
-        data: [desktopCount, mobileCount],
+        data: [mobileCount, desktopCount],
         backgroundColor: [
             'rgb(190, 54, 235)',
             'rgb(235, 196, 54)'

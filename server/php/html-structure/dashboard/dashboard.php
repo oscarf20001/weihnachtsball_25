@@ -2,7 +2,7 @@
 require __DIR__ . '/../../db_connection.php';
 require_once __DIR__ . '/../../../../config.php'; // Holt BASE_PATH und BASE_URL aus config.php
 
-$currentCosts = 2500;
+$currentCosts = 2700;
 ?>
 
 <div id="dashboardDisplayContainer">
