@@ -27,6 +27,8 @@ $outputURLEnding = getOutputURLEnding();
             echo '<p>🎵 Musikwünsche</p>';
         }elseif ($outputURLEnding == 'einlass') {
             echo '<p>🙎‍♂️ Einlass</p>';
+        }elseif ($outputURLEnding == 'imprint') {
+            echo '<p>ℹ️ Impressum</p>';
         }else{
             echo '<p><code style="color: red; font-weight:900;">Error: No specific description given. Contact -> oscar-streich@t-online.de</code></p>';
         }

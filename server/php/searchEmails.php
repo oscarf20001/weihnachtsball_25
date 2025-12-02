@@ -1,6 +1,6 @@
 <?php
 require 'db_connection.php';
-require __DIR__ . '/../../vendor/autoload.php'; // Autoloader einbinden
+//require __DIR__ . '/../../vendor/autoload.php'; // Autoloader einbinden
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['query'])) {
     $query = trim($_POST['query']);
