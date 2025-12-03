@@ -39,8 +39,8 @@ if(!$stmt->execute()){
         'status' => 'fail',
         'message' => 'Execution of prepared Statement failed'
     ]);
-    return;
     $stmt->close();
+    return;
 }
 
 $stmt->bind_result($vorname, $nachname, $send_TicketMail);

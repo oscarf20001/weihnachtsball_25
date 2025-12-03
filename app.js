@@ -135,6 +135,10 @@ async function generatePDF(person_id) {
     database: process.env.DB_NAME
   });
 
+  const dbNameENV = process.env.DB_NAME;
+  const [rows] = await conn.query("SELECT DATABASE() AS db");
+  const dbNameSQL = rows[0].db;
+
   const [data] = await conn.execute(`
     SELECT 
       p.id AS person_id,
@@ -158,7 +162,7 @@ async function generatePDF(person_id) {
   <html lang="de">
   <head>
       <meta charset="utf-8">
-      <title>Herbstball Ticket</title>
+      <title>Weihnachtsball Ticket</title>
       <link rel="stylesheet" href="style.css">
       <link rel="stylesheet" href="../../client/styles/tables.css">
       <style>
@@ -432,8 +436,8 @@ async function generatePDF(person_id) {
                 <img src="${logoBase64}" alt="Logo" height="100%" width="auto">
               </div>
               <div id="headliner" class="headliner">
-                  <h1>Herbstball 2025</h1>
-                  <p>Marie-Curie meets Friedlieb-Runge</p>
+                  <h1>Weihnachtsball 2025</h1>
+                  <p>Marie-Curie Gymnasium</p>
               </div>
               <div id="buyNewTicketsQrCode" style="padding: 16px !important; display: flex; justify-content: center; align-items: center;">
                 <img src="${qrBase64}" alt="QR-Code for new Tickets" height="75%" width="auto">
@@ -467,19 +471,19 @@ async function generatePDF(person_id) {
                   <tbody>
                       <tr>
                           <th>Einlass</th>
-                          <td>18:45 Uhr</td>
+                          <td>18:45 Uhr / 19.12.2025</td>
                       </tr>
                       <tr>
                           <th>Ende Einlass</th>
-                          <td>21:00 Uhr</td>
+                          <td>21:00 Uhr / 19.12.2025</td>
                       </tr>
                       <tr>
                           <th>Beginn der Veranstaltung</th>
-                          <td>20:00 Uhr</td>
+                          <td>20:00 Uhr / 19.12.2025</td>
                       </tr>
                       <tr>
                           <th>Ende der Veranstaltung</th>
-                          <td>01:00 Uhr</td>
+                          <td>01:00 Uhr / 20.12.2025</td>
                       </tr>
                       <tr>
                           <th>Adresse</th>
@@ -488,6 +492,14 @@ async function generatePDF(person_id) {
                       <tr>
                           <th>Mindestalter</th>
                           <td>16</td>
+                      </tr>
+                      <tr>
+                          <th>Datenbank ENV</th>
+                          <td>${dbNameENV}</td>
+                      </tr>
+                      <tr>
+                          <th>Datenbank SQL</th>
+                          <td>${dbNameSQL}</td>
                       </tr>
                   </tbody>
               </table>
@@ -504,7 +516,7 @@ async function generatePDF(person_id) {
                           <br><a href="https://www.curiegymnasium.de/client/bedingungen.php">curiegymnasium.de/client/bedingungen.php</a>
                       </td>
                   </tr>
-              </table>
+            </table>
           <footer>
               <p>Bitte beim Einlass bereithalten · Kein Wiedereinlass möglich · Alle Angaben ohne Gewähr</p>
           </footer>
