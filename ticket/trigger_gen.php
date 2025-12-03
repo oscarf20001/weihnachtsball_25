@@ -183,8 +183,8 @@ function sendConfirmationMail($conn, $id, $vorname, $email, $nachname, $logHandl
                 🚶‍♂️ <strong>Dürfen wir rausgehen?<br></strong>
                 Natürlich dürft ihr das, seid allerdings gewarnt, dass wer das Veranstaltungsgelände verlässt, der verlässt auch endgültig die Veranstaltung – der Weihnachtsmann hat da dann auch kein Nachsehen mehr. Ansonsten dürft ihr euch auf dem Gelände frei bewegen.<br><br>
 
-                🎸🎧 <strong>Wie kann ich Musikwünsche äußern?<br></strong>
-                Während der Veranstaltung dann hier: https://curiegymnasium.de/client/musikwuensche.php<br><br>
+                <!--🎸🎧 <strong>Wie kann ich Musikwünsche äußern?<br></strong>
+                Während der Veranstaltung dann hier: https://curiegymnasium.de/client/musikwuensche.php<br><br>-->
 
                 <strong>Ihr werdet außerdem von der Veranstaltung ausgeschlossen, wenn: <br></strong>
                 - ❌ ihr euch daneben benehmt<br>
