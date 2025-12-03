@@ -91,7 +91,7 @@ function sendConfirmationMail($conn, $id, $vorname, $email, $nachname, $logHandl
     <html>
     <head>
         <meta charset='UTF-8'>
-        <title>Ticketbestätigung Herbstball 2025 MCG-FFR</title>
+        <title>Ticketbestätigung Weihnachtsball 2025 Marie-Curie Gymnasium</title>
         <style>
             body {
                 margin: 0;
@@ -164,7 +164,7 @@ function sendConfirmationMail($conn, $id, $vorname, $email, $nachname, $logHandl
             <p>
                 Wir möchten euch, wo wir gerade schon alle hier sind, noch einige letzte wichtige Infos mitgeben und FAQs beantworten:<br><br>
 
-                Datum: <strong>17.10.2025</strong><br>
+                Datum: <strong>19.12.2025</strong><br>
                 Uhrzeit: <strong>Einlass</strong> ab 18:45 Uhr, Beginn um 20:00 Uhr, Ende: 01:00 Uhr<br>
                 Adresse: <strong>Friedrich-Wolf-Straße 31, Oranienburg</strong><br><br>
 
@@ -201,7 +201,7 @@ function sendConfirmationMail($conn, $id, $vorname, $email, $nachname, $logHandl
             <p>
                 Die Veranstaltung wird ca. um 00:45 Uhr bis 01:00 Uhr enden. Wir würden uns freuen, wenn sich am Ende der Veranstaltung noch einige freiwillige Helfer finden, die mit Gordon und dem gesamten Orga-Team den Saal schnell aufräumen.<br><br>
 
-                Sollte es irgendwelche Probleme oder Anregungen sowohl technischer als auch allgemeiner Natur geben, antwortet gern auf diese Mail, wendet euch an <code>oscar-streich@t-online.de</code> oder sprecht uns persönlich an!<br>
+                Sollte es irgendwelche Probleme oder Anregungen sowohl technischer als auch allgemeiner Natur geben, antwortet gern auf diese Mail oder wendet euch an das Abi-Komitee des Marie-Curie Gymnasiums (Insta: @abi2026_mcg)<br>
                 Im Anhang findet ihr euer Ticket (PDF)<br><br>
             </p>
 
@@ -210,12 +210,10 @@ function sendConfirmationMail($conn, $id, $vorname, $email, $nachname, $logHandl
                 <a href='https://curiegymnasium.de/' class='cta-button'>
                     🎟️ Tickets holen
                 </a><br><br>
-
-                Bei Fragen oder Problemen wende dich bitte an: <code>oscar-streich@t-online.de</code>
             </p>
 
             <p>
-                🌟 🎁 Wir danken und freuen uns riesig zusammen mit dir auf den 17.10. und wünschen dir eine frohe Sommerzeit bis dahin!<br><br>
+                🌟 🎁 Wir danken und freuen uns riesig zusammen mit dir auf den 19.12 und wünschen dir eine frohe Weihnachtszeit bis dahin!<br><br>
 
 
                 Mit freundlichen Grüßen,<br><strong>Gordon!</strong>
@@ -244,7 +242,7 @@ function sendConfirmationMail($conn, $id, $vorname, $email, $nachname, $logHandl
 
             // Absender und Empfänger
             $mail->setFrom($_ENV['MAIL_USERNAME'], 'Marie-Curie Gymnasium');
-            $mail->addReplyTo('oscar-streich@t-online.de', 'Oscar');
+            $mail->addReplyTo('oscar-streich@t-online.de', 'Marie-Curie Gymnasium');
             $mail->addAddress($email, $vorname);
             $pdfPfad = __DIR__ . '/gen_pdfs/ticket_person_' . $id . '.pdf';
             if (file_exists($pdfPfad)) {
@@ -256,8 +254,8 @@ function sendConfirmationMail($conn, $id, $vorname, $email, $nachname, $logHandl
             // E-Mail-Inhalt
             $mail->isHTML(true);
             $mail->Body = $nachricht;
-            $mail->Subject = '🎉 Epische Ticketbestätigung: Herbstball MCG-FFR 2025 🍁🌙';
-            $mail->AltBody = 'Deine Kosten wurden beglichen. Hier Tickets für den Herbstball des MCG 2025 sichern: https://www.curiegymnasium.de/';
+            $mail->Subject = '🎉 Epische Ticketbestätigung: Weihnachtsball MCG 2025 🎄🎅🎉';
+            $mail->AltBody = 'Deine Kosten wurden beglichen. Hier Tickets für den Weihnachtsball des MCG 2025 sichern: https://www.curiegymnasium.de/';
 
             // E-Mail senden
             // E-Mail senden und loggen

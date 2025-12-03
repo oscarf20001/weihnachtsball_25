@@ -108,7 +108,7 @@ async function generatePDF(person_id) {
   const fileName = `ticket_person_${person_id}.pdf`;
   const outputPath = path.resolve(ticketsDir, fileName);
 
-  const eventCode = 'HB2025_';
+  const eventCode = 'WB2025_';
   const key = parseInt(process.env.ENC_KEY);
   if (isNaN(key)) {
     console.error('❌ ENV KEY ist ungültig oder nicht gesetzt');
