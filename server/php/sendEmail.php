@@ -237,7 +237,7 @@ try {
             📍 Adresse: Friedrich-Wolf-Straße 31, Oranienburg
         </p>
         <p>
-            Ab wann, wo und wie Bar gezahlt werden kann, teilen wir euch noch rechtzeitig mit!
+            Für eine Barzahlung der Tickets stehen euch die Termine am Dienstag und Donnerstag, in der großen Pause (11:10 Uhr - 11:40 Uhr), vor der Bibliothek des Marie-Curie Gymnasiums zur Verfügung.
         </p>
         <!--<p style='color:#c0392b;'>
             <strong>Wichtig:</strong> Unbezahlte Tickets werden am <strong>12.12.2025 um 23:59 Uhr</strong> automatisch storniert!
@@ -294,7 +294,8 @@ $nachricht .= "
         </p>
 
         <div class='footer'>
-            *Alle Angaben ohne Gewähr; Änderungen vorbehalten
+            *Alle Angaben ohne Gewähr; Änderungen vorbehalten; <a href='https://www.curiegymnasium.de/client/bedingungen.php'>Teilnahmebedingungen</a><br><br>
+            Weitere Informationen: Impressum & Datenschutz: <a href='https://curiegymnasium.de/client/imprint.php'>https://curiegymnasium.de/client/imprint.php</a>
         </div>
     </div>
 </body>

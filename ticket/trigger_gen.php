@@ -220,7 +220,8 @@ function sendConfirmationMail($conn, $id, $vorname, $email, $nachname, $logHandl
             </p>
 
             <div class='footer'>
-                *Alle Angaben ohne Gewähr; Änderungen vorbehalten; <a href='https://www.curiegymnasium.de/client/bedingungen.php'>Teilnahmebedingungen</a>
+                *Alle Angaben ohne Gewähr; Änderungen vorbehalten; <a href='https://www.curiegymnasium.de/client/bedingungen.php'>Teilnahmebedingungen</a><br><br>
+                Weitere Informationen: Impressum & Datenschutz: <a href='https://curiegymnasium.de/client/imprint.php'>https://curiegymnasium.de/client/imprint.php</a>
             </div>
     </body>
     </html>        
