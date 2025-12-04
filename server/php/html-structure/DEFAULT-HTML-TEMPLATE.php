@@ -82,6 +82,8 @@ if($outputURLEnding == 'index'){
     require __DIR__ . '/mainContainer/MC_einlass.php';
 }else if($outputURLEnding == 'imprint'){
     require __DIR__ . '/mainContainer/MC_imprint.php';
+}else if($outputURLEnding == 'datasecurity'){
+    require __DIR__ . '/mainContainer/MC_datasecurity.php';
 }else{
     echo '<p><code style="color: red; font-weight:900;">Error: No specific (main)-container given. Contact -> oscar-streich@t-online.de</code></p>';
 }

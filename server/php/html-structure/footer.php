@@ -6,3 +6,7 @@
 <p id="imprint">
     <a href="/../../client/imprint.php">Impressum</a>
 </p>
+
+<p id="datasecurity">
+    <a href="/../../client/datasecurity.php">Datenschutz</a>
+</p>
