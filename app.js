@@ -498,14 +498,6 @@ async function generatePDF(person_id) {
                           <th>Mindestalter</th>
                           <td>16</td>
                       </tr>
-                      <tr>
-                          <th>Datenbank ENV</th>
-                          <td>${dbNameENV}</td>
-                      </tr>
-                      <tr>
-                          <th>Datenbank SQL</th>
-                          <td>${dbNameSQL}</td>
-                      </tr>
                   </tbody>
               </table>
           </div>
@@ -524,7 +516,7 @@ async function generatePDF(person_id) {
             </table>
           <footer>
               <p>Bitte beim Einlass bereithalten · Kein Wiedereinlass möglich · Alle Angaben ohne Gewähr</p>
-              <p>Impressum & Datenschutz: https://curiegymnasium.de/client/imprint.php</p>
+              <p>Weitere Informationen: Impressum & Datenschutz: <a href="https://curiegymnasium.de/client/imprint.php">https://curiegymnasium.de/client/imprint.php</a></p>
           </footer>
       </section>
   </body>
