@@ -321,7 +321,12 @@ async function generatePDF(person_id) {
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             /*border: 2px dashed green;*/
+        }
+
+        footer p{
+            margin: 0 auto;
         }
 
         :root{
@@ -519,6 +524,7 @@ async function generatePDF(person_id) {
             </table>
           <footer>
               <p>Bitte beim Einlass bereithalten · Kein Wiedereinlass möglich · Alle Angaben ohne Gewähr</p>
+              <p>Impressum & Datenschutz: https://curiegymnasium.de/client/imprint.php</p>
           </footer>
       </section>
   </body>

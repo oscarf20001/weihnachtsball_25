@@ -45,9 +45,9 @@
                     <div id="downerTickets">
                         <select name="" id="selectNewEmailType">
                             <option value="" disabled selected>Bitte auswählen</option>
-                            <option value="submit_ticket">Ticketbestätigung</option>
-                            <option value="confirm_payment" disabled>Kosten bestätigen</option>
-                            <option value="ticket" disabled>Ticket senden</option>
+                            <option value="submit_ticket">Reservierungsbestätigung</option>
+                            <option value="ticket">Ticket senden</option>
+                            <option value="confirm_payment" disabled>Kosten clearen</option>
                         </select>
                         <button type="button" id="getAllTicketsForCustomerButton" class="inactive getAllTicketsForCustomerButton"><i class="fa-solid fa-paper-plane"></i>Email senden</button>
                     </div>
